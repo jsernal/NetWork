@@ -56,18 +56,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202310271544221_InitialCreate.cs" />
-    <Compile Include="Migrations\202310271544221_InitialCreate.designer.cs">
-      <DependentUpon>202310271544221_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202310271602471_AgregarTablasAdminYRecep.cs" />
-    <Compile Include="Migrations\202310271602471_AgregarTablasAdminYRecep.designer.cs">
-      <DependentUpon>202310271602471_AgregarTablasAdminYRecep.cs</DependentUpon>
+    <Compile Include="Migrations\202310272029420_InitialCreate.cs" />
+    <Compile Include="Migrations\202310272029420_InitialCreate.designer.cs">
+      <DependentUpon>202310272029420_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Modelo\Administrador.cs" />
     <Compile Include="Modelo\Clientes.cs" />
     <Compile Include="Modelo\ConexionDB.cs" />
+    <Compile Include="Modelo\ConexionERP.cs" />
     <Compile Include="Modelo\Empleados.cs" />
     <Compile Include="Modelo\Facturas.cs" />
     <Compile Include="Modelo\Habitaciones.cs" />
@@ -76,19 +73,16 @@
     <Compile Include="Modelo\Servicios.cs" />
     <Compile Include="Modelo\TipoAlojamiento.cs" />
     <Compile Include="Modelo\TipoHabitacion.cs" />
-    <Compile Include="Vista\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Migrations\202310271544221_InitialCreate.resx">
-      <DependentUpon>202310271544221_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310271602471_AgregarTablasAdminYRecep.resx">
-      <DependentUpon>202310271602471_AgregarTablasAdminYRecep.cs</DependentUpon>
+    <Compile Include="Vista\FormClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormClientes.Designer.cs">
+      <DependentUpon>FormClientes.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Migrations\202310272029420_InitialCreate.resx">
+      <DependentUpon>202310272029420_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -99,6 +93,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vista\FormClientes.resx">
+      <DependentUpon>FormClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
