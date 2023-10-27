@@ -1,0 +1,16 @@
+E:\DAM\NET\NetWork\NetWork\bin\Debug\NetWork.exe.config
+E:\DAM\NET\NetWork\NetWork\bin\Debug\NetWork.exe
+E:\DAM\NET\NetWork\NetWork\bin\Debug\NetWork.pdb
+E:\DAM\NET\NetWork\NetWork\bin\Debug\EntityFramework.dll
+E:\DAM\NET\NetWork\NetWork\bin\Debug\EntityFramework.SqlServer.dll
+E:\DAM\NET\NetWork\NetWork\bin\Debug\EntityFramework.xml
+E:\DAM\NET\NetWork\NetWork\bin\Debug\EntityFramework.SqlServer.xml
+E:\DAM\NET\NetWork\NetWork\obj\Debug\NetWork.csproj.AssemblyReference.cache
+E:\DAM\NET\NetWork\NetWork\obj\Debug\NetWork.Properties.Resources.resources
+E:\DAM\NET\NetWork\NetWork\obj\Debug\NetWork.csproj.GenerateResource.cache
+E:\DAM\NET\NetWork\NetWork\obj\Debug\NetWork.csproj.CoreCompileInputs.cache
+E:\DAM\NET\NetWork\NetWork\obj\Debug\NetWork.csproj.CopyComplete
+E:\DAM\NET\NetWork\NetWork\obj\Debug\NetWork.exe
+E:\DAM\NET\NetWork\NetWork\obj\Debug\NetWork.pdb
+E:\DAM\NET\NetWork\NetWork\obj\Debug\NetWork.Migrations.InitialCreate.resources
+E:\DAM\NET\NetWork\NetWork\obj\Debug\NetWork.Migrations.AgregarTablasAdminYRecep.resources
