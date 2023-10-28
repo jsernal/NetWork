@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace NetWork.Modelo {
     public enum TipoCliente
@@ -43,5 +44,13 @@ namespace NetWork.Modelo {
         {
             // Puedes inicializar propiedades por defecto si es necesario
         }
+
+        [XmlRoot("ClienteList")]
+        public class ClienteLst
+        {
+            [XmlElement("Clientes")]
+            public List<Clientes> Clientes { get; set; }
+        }
+
     }
 }
