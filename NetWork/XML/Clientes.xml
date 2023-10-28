@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfClientes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Clientes>
+    <IdCliente>2</IdCliente>
+    <Dni>3541871H</Dni>
+    <Nombre>Paquito</Nombre>
+    <Telefono>5479861</Telefono>
+    <Tipo>Normal</Tipo>
+    <Email>paquito@paquito.com</Email>
+  </Clientes>
+</ArrayOfClientes>
