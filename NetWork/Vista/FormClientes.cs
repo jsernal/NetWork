@@ -19,12 +19,37 @@ namespace NetWork.Vista
         {
             InitializeComponent();
         }
-       
         private void FormClientes_Load(object sender, EventArgs e)
         {
             combtipo.DataSource = Enum.GetValues(typeof(TipoCliente));
+            Refresh();
         }
+        new
+       public void Refresh()
+        {
+            using (ConexionDB db = new ConexionDB())
+            {
+                var clientes = db.Clientes.ToList();
 
+                // Supongamos que la base de datos tiene más columnas de las que quieres mostrar en el DataGridView
+                // Por ejemplo, tiene las columnas Nombre, Apellido, Email, Telefono, Direccion, Ciudad, FechaNacimiento, etc.
+
+                // Asignar solo las seis primeras columnas de la base de datos a las columnas correspondientes del DataGridView
+                foreach (var cliente in clientes)
+                {
+                    // Suponiendo que los nombres de las propiedades en el objeto cliente coinciden con las columnas en la base de datos
+                    dataGridView1.Rows.Add(cliente.IdCliente, cliente.Dni, cliente.Nombre,cliente.Telefono, cliente.Tipo, cliente.Email);
+                }
+            }
+
+
+        }
+        /*
+        private void FormClientes_Load(object sender, EventArgs e)
+        {
+            
+        }
+        */
         private void label1_Click(object sender, EventArgs e)
         {
 

@@ -36,7 +36,7 @@ namespace NetWork.Modelo
             }
 
             XmlSerializer serializer = new XmlSerializer(typeof(List<Clientes>));
-            using (TextWriter writer = new StreamWriter(@"E:\DAM\NET\NetWork\NetWork\XML\Clientes.xml"))
+            using (TextWriter writer = new StreamWriter(@"C:\Users\sergi\Desktop\GIT\Network\NetWork\XML\Clientes.xml"))
             {
                 serializer.Serialize(writer, clientes);
             }

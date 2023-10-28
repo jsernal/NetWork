@@ -1,11 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfClientes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Clientes>
-    <IdCliente>2</IdCliente>
-    <Dni>3541871H</Dni>
-    <Nombre>Paquito</Nombre>
-    <Telefono>5479861</Telefono>
+    <IdCliente>7</IdCliente>
+    <Dni>12345678A</Dni>
+    <Nombre>Juan Pérez</Nombre>
+    <Telefono>123456789</Telefono>
+    <Tipo>Vip</Tipo>
+    <Email>juanperez@email.com</Email>
+  </Clientes>
+  <Clientes>
+    <IdCliente>8</IdCliente>
+    <Dni>98765432B</Dni>
+    <Nombre>María López</Nombre>
+    <Telefono>987654321</Telefono>
     <Tipo>Normal</Tipo>
-    <Email>paquito@paquito.com</Email>
+    <Email>marialopez@email.com</Email>
+  </Clientes>
+  <Clientes>
+    <IdCliente>9</IdCliente>
+    <Dni>56789012C</Dni>
+    <Nombre>Luis Martínez</Nombre>
+    <Telefono>567890123</Telefono>
+    <Tipo>Vip</Tipo>
+    <Email>luismartinez@email.com</Email>
+  </Clientes>
+  <Clientes>
+    <IdCliente>10</IdCliente>
+    <Dni>34567890D</Dni>
+    <Nombre>Ana García</Nombre>
+    <Telefono>345678901</Telefono>
+    <Tipo>Normal</Tipo>
+    <Email>anagarcia@email.com</Email>
+  </Clientes>
+  <Clientes>
+    <IdCliente>11</IdCliente>
+    <Dni>90123456E</Dni>
+    <Nombre>Carlos Rodríguez</Nombre>
+    <Telefono>901234567</Telefono>
+    <Tipo>Vip</Tipo>
+    <Email>carlosrodriguez@email.com</Email>
   </Clientes>
 </ArrayOfClientes>
