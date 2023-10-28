@@ -1,5 +1,4 @@
 ﻿//using Microsoft.VisualBasic.Devices;
-using NetWork.Modelo;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -18,13 +17,13 @@ namespace NetWork
 {
     public class ConexionERP
     {
-    /*   public static void ActividadToXML(string filePath)
+       /* public static void ActividadToXML(string filePath)
         {
 
-            using (ConexionDB db = new ConexionDB())
+            using (NetworkDBEntities dBhotel = new NetworkDBEntities())
             {
 
-                List<Clientes> ListaActividades = GestionHotel.ListarActividades();
+                List<ClienteView> ListaActividades = GestionHotel.ListarActividades();
 
 
                 XmlSerializer serializer = new XmlSerializer(typeof(List<ClienteView>), new XmlRootAttribute("ClienteList"));
@@ -35,9 +34,10 @@ namespace NetWork
                 }
             }
         }
-    */
 
-        /*
+
+
+
         public static void xmlToActividad(string filePath)
         {
             Clientelst ClienteXmlLst = new ClienteLst();

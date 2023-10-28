@@ -30,5 +30,18 @@ namespace NetWork.Modelo {
             Tipo = tipo;
             Email = email;
         }
+
+        public Clientes(string dni, string nombre, int telefono, TipoCliente tipo, string email)
+        {
+            Dni = dni;
+            Nombre = nombre;
+            Telefono = telefono;
+            Tipo = tipo;
+            Email = email;
+        }
+        public Clientes()
+        {
+            // Puedes inicializar propiedades por defecto si es necesario
+        }
     }
 }

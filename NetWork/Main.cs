@@ -1,4 +1,5 @@
-﻿using NetWork.Vista;
+﻿using NetWork.Modelo;
+using NetWork.Vista;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,10 @@ namespace NetWork
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
+        
+        Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormClientes());
+            Application.Run(new FormXML());
         }
     }
 }

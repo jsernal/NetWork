@@ -60,6 +60,10 @@
     <Compile Include="Migrations\202310272029420_InitialCreate.designer.cs">
       <DependentUpon>202310272029420_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310280757469_AgregarTablasAdminYRecep.cs" />
+    <Compile Include="Migrations\202310280757469_AgregarTablasAdminYRecep.designer.cs">
+      <DependentUpon>202310280757469_AgregarTablasAdminYRecep.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Modelo\Administrador.cs" />
     <Compile Include="Modelo\Clientes.cs" />
@@ -81,8 +85,17 @@
     <Compile Include="Vista\FormClientes.Designer.cs">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FormXML.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormXML.Designer.cs">
+      <DependentUpon>FormXML.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Migrations\202310272029420_InitialCreate.resx">
       <DependentUpon>202310272029420_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310280757469_AgregarTablasAdminYRecep.resx">
+      <DependentUpon>202310280757469_AgregarTablasAdminYRecep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -95,6 +108,9 @@
     </Compile>
     <EmbeddedResource Include="Vista\FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormXML.resx">
+      <DependentUpon>FormXML.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
