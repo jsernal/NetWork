@@ -20,7 +20,7 @@ namespace NetWork.Vista
             InitializeComponent();
         }
 
-       
+
         private void FormXML_Load_1(object sender, EventArgs e)
         {
             Refresh();
@@ -38,18 +38,22 @@ namespace NetWork.Vista
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ActividadToXML("C:\\Users\\sergi\\Desktop");
-        }
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Archivos XML (*.xml)|*.xml";
+            saveFileDialog1.Title = "Guardar archivo XML";
 
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog1.FileName;
+                ActividadToXML(filePath);
+            }
+        }
 
         public static void ActividadToXML(string filePath)
         {
-
             using (ConexionDB db = new ConexionDB())
             {
-
                 List<Clientes> ListaActividades = db.Clientes.ToList();
-
 
                 XmlSerializer serializer = new XmlSerializer(typeof(List<Clientes>), new XmlRootAttribute("ClienteList"));
 
@@ -59,6 +63,5 @@ namespace NetWork.Vista
                 }
             }
         }
-
     }
-}
+  }
