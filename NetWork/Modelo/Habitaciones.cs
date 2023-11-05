@@ -19,5 +19,9 @@ namespace NetWork.Modelo {
             Estado = estado;
             Tipo = tipo;
         }
+
+        public Habitaciones()
+        {
+        }
     }
 }
