@@ -43,7 +43,7 @@ namespace NetWork.Vista
                             {
                                 estaDisponible = true; // La habitación está ocupada para esta fecha
                                 Console.WriteLine($"Habitación: {habitacion.NumHabitacion} HabitaciónREs: {reserva.NumHabitacion}  está libre para la fecha {fechaSeleccionada} v fechares {reserva.Fecha}");
-                                break; // Salir del bucle si la habitación está ocupada en esta fecha
+                                //break; // Salir del bucle si la habitación está ocupada en esta fecha
                             }
 
                             // Si la habitación está disponible, añadirla al DataGridView
@@ -59,10 +59,6 @@ namespace NetWork.Vista
             }
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            ActualizarDatos(dateTimePicker1.Value);
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -73,6 +69,9 @@ namespace NetWork.Vista
             this.Close();
         }
 
-
+        private void dateTimePicker1_ValueChanged_1(object sender, EventArgs e)
+        {
+            ActualizarDatos(dateTimePicker1.Value);
+        }
     }
 }
