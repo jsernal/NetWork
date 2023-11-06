@@ -17,6 +17,7 @@ namespace NetWork.Vista
         {
 
         }
+
         public void ActualizarDatos(DateTime fechaSeleccionada)
         {
             using (ConexionDB db = new ConexionDB())
@@ -25,40 +26,64 @@ namespace NetWork.Vista
                 var tipo = db.TipoHabitacion.ToList();
                 var res = db.Reservas.ToList();
 
-
                 // Verificar si la lista de habitaciones no está vacía
                 if (habitaciones.Any())
                 {
                     dataGridView1.Rows.Clear();
+                    int habitacionesLibres = 0;
+                    int totalHabitaciones = habitaciones.Count;
 
                     foreach (var habitacion in habitaciones)
                     {
-                        bool estaDisponible = false; // Establecer como disponible inicialmente
+                        bool estaDisponible = true; // Establecer como disponible inicialmente
 
                         // Verificar si alguna reserva coincide con la habitación y la fecha seleccionada
                         foreach (var reserva in res)
                         {
-                            if (reserva.NumHabitacion != habitacion.NumHabitacion || (reserva.Fecha.Date.Year == fechaSeleccionada.Year &&
-            reserva.Fecha.Date.Month == fechaSeleccionada.Month && reserva.Fecha.Date.Day == fechaSeleccionada.Day))
+                            if (reserva.NumHabitacion == habitacion.NumHabitacion && (reserva.Fecha.Date.Year == fechaSeleccionada.Year &&
+                                reserva.Fecha.Date.Month == fechaSeleccionada.Month && reserva.Fecha.Date.Day == fechaSeleccionada.Day))
                             {
-                                estaDisponible = true; // La habitación está ocupada para esta fecha
-                                Console.WriteLine($"Habitación: {habitacion.NumHabitacion} HabitaciónREs: {reserva.NumHabitacion}  está libre para la fecha {fechaSeleccionada} v fechares {reserva.Fecha}");
-                                //break; // Salir del bucle si la habitación está ocupada en esta fecha
+                                estaDisponible = false;
+                                habitacion.Estado = "Ocupado";
+                                // La habitación está ocupada para esta fecha
+                                break; // Salir del bucle si la habitación está ocupada en esta fecha
                             }
-
-                            // Si la habitación está disponible, añadirla al DataGridView
-                            
                         }
                         if (estaDisponible)
                         {
+                            habitacion.Estado = "Libre";
+                            habitacionesLibres++;
                             dataGridView1.Rows.Add(habitacion.NumHabitacion, habitacion.Estado, habitacion.Tipo.Descripcion, habitacion.Tipo.PrecioBase);
-                            //Console.WriteLine($"Habitación: {habitacion.NumHabitacion}, HabitacionRes: {reserva.NumHabitacion} está disponible para la fecha {fechaSeleccionada}");
+                            // Console.WriteLine($"Habitación: {habitacion.NumHabitacion}, está disponible para la fecha {fechaSeleccionada}");
+                        }
+                    }
+
+                    // Calcular el porcentaje de habitaciones libres
+                    double porcentajeHabitacionesLibres = (habitacionesLibres * 100.0) / totalHabitaciones;
+
+                    // Ajustar precios según el porcentaje de habitaciones libres
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        if (row.Cells[1].Value != null && row.Cells[1].Value.ToString() == "Libre")
+                        {
+                            double precioBase = Convert.ToDouble(row.Cells[3].Value);
+
+                            if (porcentajeHabitacionesLibres > 75)
+                            {
+                                // Más del 75% de habitaciones libres
+                                row.Cells[3].Value = (precioBase * 0.50).ToString();
+                            }
+                            else if (porcentajeHabitacionesLibres < 25)
+                            {
+                                // Menos del 25% de habitaciones libres
+                                row.Cells[3].Value = (precioBase * 1.50).ToString();
+                            }
+                            // En otro caso, entre 25% y 75%, el precio se mantiene igual
                         }
                     }
                 }
             }
         }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -73,5 +98,54 @@ namespace NetWork.Vista
         {
             ActualizarDatos(dateTimePicker1.Value);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                MessageBox.Show("Por favor, ingrese un número de habitación.");
+                textBox1.Clear();
+                return;
+            }
+
+            bool habitacionEncontrada = false;
+            int numeroHabitacion;
+
+            if (!int.TryParse(textBox1.Text, out numeroHabitacion))
+            {
+                MessageBox.Show("Ingrese un número válido para la habitación.");
+                textBox1.Clear();
+                return;
+            }
+
+            // Obtener la fecha actual del sistema
+            DateTime fechaActual = DateTime.Now;
+
+            if (dateTimePicker1.Value.Date < fechaActual.Date)
+            {
+                MessageBox.Show("La fecha de reserva debe ser igual o posterior a la fecha actual.");
+                return;
+            }
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells[0].Value != null && Convert.ToInt32(row.Cells[0].Value) == numeroHabitacion)
+                {
+                    habitacionEncontrada = true;
+
+                    // Resto del código para pasar los datos de la habitación al formulario FormReserva...
+                    // (El código es el mismo que se mostró anteriormente)
+
+                    break;
+                }
+            }
+
+            if (!habitacionEncontrada)
+            {
+                MessageBox.Show("El número de habitación ingresado no coincide con ninguna habitación mostrada.");
+                textBox1.Clear();
+            }
+        }
     }
+   
 }
