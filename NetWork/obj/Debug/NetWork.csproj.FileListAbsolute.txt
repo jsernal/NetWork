@@ -38,3 +38,4 @@ C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.exe
 C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.pdb
 C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Vista.MenuPrincipal.resources
 C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Vista.FormCalendario.resources
+C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Vista.FormReserva.resources

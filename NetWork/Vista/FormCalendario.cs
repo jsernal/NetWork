@@ -134,7 +134,16 @@ namespace NetWork.Vista
                     habitacionEncontrada = true;
 
                     // Resto del código para pasar los datos de la habitación al formulario FormReserva...
-                    // (El código es el mismo que se mostró anteriormente)
+                    // Pasar los datos de la habitación al siguiente formulario (FormReserva)
+                    string numHabitacion = row.Cells[0].Value.ToString();
+                    string estado = row.Cells[1].Value.ToString();
+                    string descripcion = row.Cells[2].Value.ToString();
+                    string precio = row.Cells[3].Value.ToString();
+
+                    // Crear una instancia del formulario FormReserva y pasar los datos
+                    FormReserva formReserva = new FormReserva(EmailUsuario.Text, numHabitacion,descripcion, precio);
+                    formReserva.Show();
+                    break;
 
                     break;
                 }
