@@ -129,18 +129,58 @@ namespace NetWork.Vista
 
             using (ConexionDB db = new ConexionDB())
             {
-                // Verificar si existe un cliente con el email y DNI proporcionados
-                var cliente = db.Clientes.FirstOrDefault(c => c.Email == email && c.Dni == dni);
+                    // Verificar si existe un cliente con el email y DNI proporcionados
+                    var cliente = db.Clientes.FirstOrDefault(c => c.Email == email && c.Dni == dni);
 
-                if (cliente == null)
-                {
-                    MessageBox.Show("El email y el DNI no corresponden al mismo cliente.");
-                    return;
-                }
+                    if (cliente == null)
+                    {
+                        MessageBox.Show("El email y el DNI no corresponden al mismo cliente.");
+                        return;
+                    }
 
                 // Si el email y el DNI pertenecen al mismo cliente, continuar con la lógica adicional del botón
-                // ... Coloca aquí tu lógica adicional una vez que se han pasado las validaciones y se ha confirmado el cliente.
-            }
+                // Obtener datos para la reserva
+                    DateTime fechaEntrada = data;
+                    DateTime fechaSalida = dateTimePicker1.Value;
+                    string numHabitacion1 = label9.Text;
+
+                    // Insertar datos de reserva por cada día entre fecha de entrada y salida
+                    for (DateTime date1 = fechaEntrada; date1 <= fechaSalida; date1 = date1.AddDays(1))
+                    {
+                        Reservas nuevaReserva = new Reservas
+                        {
+                            Fecha = date1,
+                            DniCliente = cliente.Dni,
+                            NumHabitacion = int.Parse(numHabitacion1)
+                };
+
+                        db.Reservas.Add(nuevaReserva);
+                    }
+
+                    // Guardar los cambios en la base de datos
+                    db.SaveChanges();
+
+                    // Insertar en la tabla Factura
+                    int codigoServicio = comboBox1.SelectedIndex + 1; // Sumamos 1 porque los índices comienzan en 0
+                    decimal totalFactura = decimal.Parse(label15.Text);
+
+                    Facturas nuevaFactura = new Facturas
+                    {
+                        IdCliente = cliente.IdCliente, // Suponiendo que hay un campo Id en la tabla Clientes
+                        CodigoServicio = codigoServicio,
+                        TotalFactura = totalFactura
+                    };
+
+                    db.Facturas.Add(nuevaFactura);
+                    db.SaveChanges();
+
+                    FormCalendario registroForm = new FormCalendario(label13.Text);
+
+                    registroForm.Show();
+
+                     this.Close();
+            } 
         }
+
     }
 }

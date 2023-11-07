@@ -143,6 +143,7 @@ namespace NetWork.Vista
                     // Crear una instancia del formulario FormReserva y pasar los datos
                     FormReserva formReserva = new FormReserva(EmailUsuario.Text, numHabitacion,descripcion, precio,dateTimePicker1.Value.Date);
                     formReserva.Show();
+                    this.Close();
                     break;
                 }
             }
