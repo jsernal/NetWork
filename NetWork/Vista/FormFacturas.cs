@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
@@ -21,7 +22,7 @@ namespace NetWork.Vista
         ConexionDB db;
         Facturas factura = new Facturas();
 
-        public void Create(Facturas factura)
+       /* public void Create(Facturas factura)
         {
             {
                 try
@@ -41,7 +42,7 @@ namespace NetWork.Vista
                 }
 
             }
-        }
+        }*/
 
         public List<Facturas> Read()
         {
@@ -104,14 +105,31 @@ namespace NetWork.Vista
             }
         }
 
+        public List<Facturas> buscarPorNif(string dniCliente)
+        {
+            try
+            {
+                using (db = new ConexionDB())
+                {
+                    return db.Facturas.Where(Facturas => Facturas.IdCliente == dniCliente).ToList();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+
+        }
+
 
         private void cargarDatos()
            {
-               factura.NumFactura = Convert.ToInt32(textboxNumFactura.Text);
+          //     factura.NumFactura = Convert.ToInt32(textboxNumFactura.Text);
                factura.IdCliente = textBoxNifCliente.Text;
-               factura.CodigoServicio = Convert.ToInt32(textBoxCodServicio.Text);
-               factura.FechaFactura = DateTime.Parse(dateTimePickerFecha.Text);
-                factura.TotalFactura = Convert.ToInt32(textBoxTotalFactura.Text);
+            // factura.CodigoServicio = Convert.ToInt32(textBoxCodServicio.Text);
+               factura.TotalFactura = Convert.ToDecimal(textTotal.Text);
 
 
             cargarGrid();
@@ -129,11 +147,11 @@ namespace NetWork.Vista
         }
         private void limpiarDatos()
         {
-            textboxNumFactura.Focus();
-            textboxNumFactura.Text = string.Empty;
+            //textboxNumFactura.Focus();
+            //textboxNumFactura.Text = string.Empty;
             textBoxNifCliente.Text = string.Empty;
-            dateTimePickerFecha.Text = string.Empty;
-            textBoxCodServicio.Text = string.Empty;
+            //dateTimePickerFecha.Text = string.Empty;
+            //textBoxCodServicio.Text = string.Empty;
             cargarGrid();
 
         }
@@ -145,7 +163,7 @@ namespace NetWork.Vista
 
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+     /*   private void btnEliminar_Click(object sender, EventArgs e)
         {
             {
 
@@ -153,23 +171,7 @@ namespace NetWork.Vista
                 Delete(factura.NumFactura);
                 limpiarDatos();
             }
-        }
-
-        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            {
-                textboxNumFactura.Text = dataGridView1.CurrentRow.Cells["NumFactura"].Value.ToString();
-
-                textBoxNifCliente.Text = dataGridView1.CurrentRow.Cells["IdCliente"].Value.ToString();
-
-                textBoxCodServicio.Text = dataGridView1.CurrentRow.Cells["CodigoServicio"].Value.ToString();
-
-                dateTimePickerFecha.Text = dataGridView1.CurrentRow.Cells["FechaFactura"].Value.ToString();
-
-                textBoxTotalFactura.Text = dataGridView1.CurrentRow.Cells["TotalFactura"].Value.ToString();
-
-            }
-        }
+        } */
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -185,6 +187,48 @@ namespace NetWork.Vista
 
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBoxNifCliente_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxNifCliente.Text != String.Empty)
+            {
+                var Lst = buscarPorNif(textBoxNifCliente.Text);
+                dataGridView1.DataSource = Lst;
+            }
+            else
+            {
+                cargarGrid();
+
+
+            }
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textTotal_TextChanged(object sender, EventArgs e)
+        {
+        }
+    }
+ }
+
         /*   private void btnGuardarCambios_Click(object sender, EventArgs e)
            {
                if (textboxCodigoReserva.Text != string.Empty)
@@ -195,5 +239,3 @@ namespace NetWork.Vista
                }
 
            }*/
-    }
-}
