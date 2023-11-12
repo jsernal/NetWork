@@ -74,7 +74,6 @@ namespace NetWork.Vista
                     MessageBox.Show("El teléfono solo puede contener números.");
                     return;
                 }
-
                 TipoCliente tipo = (TipoCliente)combtipo.SelectedItem;
 
                 using (var db = new ConexionDB())

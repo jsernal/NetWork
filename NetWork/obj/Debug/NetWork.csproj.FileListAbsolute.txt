@@ -39,3 +39,29 @@ C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.pdb
 C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Vista.MenuPrincipal.resources
 C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Vista.FormCalendario.resources
 C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Vista.FormReserva.resources
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\bin\Debug\NetWork.exe.config
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\bin\Debug\NetWork.exe
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\bin\Debug\NetWork.pdb
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\bin\Debug\EntityFramework.dll
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\bin\Debug\EntityFramework.xml
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\obj\Debug\NetWork.csproj.AssemblyReference.cache
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\obj\Debug\NetWork.Migrations.InitialCreate.resources
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\obj\Debug\NetWork.Migrations.AgregarTablasAdminYRecep.resources
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\obj\Debug\NetWork.Migrations.CambiarIDSaAutoIncremento.resources
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\obj\Debug\NetWork.Properties.Resources.resources
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\obj\Debug\NetWork.Vista.FormCalendario.resources
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\obj\Debug\NetWork.Vista.FormClientes.resources
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\obj\Debug\NetWork.Vista.FormReserva.resources
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\obj\Debug\NetWork.Vista.FormXML.resources
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\obj\Debug\NetWork.Vista.MenuPrincipal.resources
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\obj\Debug\NetWork.csproj.GenerateResource.cache
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\obj\Debug\NetWork.csproj.CoreCompileInputs.cache
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\obj\Debug\NetWork.csproj.CopyComplete
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\obj\Debug\NetWork.exe
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\obj\Debug\NetWork.pdb
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\obj\Debug\NetWork.Vista.FormModificarReservas.resources
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\obj\Debug\NetWork.Vista.FormFacturas.resources
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\obj\Debug\NetWork.Migrations.facturaIDString.resources
+C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\obj\Debug\NetWork.Migrations.FechaFactura.resources

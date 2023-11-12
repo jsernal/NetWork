@@ -81,5 +81,19 @@ namespace NetWork.Vista
 
             this.Hide();
         }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            Form formulario = new FormModificarReservas(EmailUsuario.Text);
+            formulario.Show();
+            this.Hide();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form formulario = new FormFacturas(EmailUsuario.Text);
+            formulario.Show();
+            this.Hide();
+        }
     }
 }

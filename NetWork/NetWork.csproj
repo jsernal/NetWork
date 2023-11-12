@@ -68,6 +68,14 @@
     <Compile Include="Migrations\202310271710377_CambiarIDSaAutoIncremento.designer.cs">
       <DependentUpon>202310271710377_CambiarIDSaAutoIncremento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311121459458_facturaIDString.cs" />
+    <Compile Include="Migrations\202311121459458_facturaIDString.designer.cs">
+      <DependentUpon>202311121459458_facturaIDString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311121522023_FechaFactura.cs" />
+    <Compile Include="Migrations\202311121522023_FechaFactura.designer.cs">
+      <DependentUpon>202311121522023_FechaFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Modelo\Administrador.cs" />
     <Compile Include="Modelo\Clientes.cs" />
@@ -100,6 +108,18 @@
     <Compile Include="Vista\FormClientes.Designer.cs">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FormFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormFacturas.Designer.cs">
+      <DependentUpon>FormFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormModificarReservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormModificarReservas.Designer.cs">
+      <DependentUpon>FormModificarReservas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FormReserva.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +147,12 @@
     <EmbeddedResource Include="Migrations\202310271710377_CambiarIDSaAutoIncremento.resx">
       <DependentUpon>202310271710377_CambiarIDSaAutoIncremento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311121459458_facturaIDString.resx">
+      <DependentUpon>202311121459458_facturaIDString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311121522023_FechaFactura.resx">
+      <DependentUpon>202311121522023_FechaFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -137,6 +163,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormFacturas.resx">
+      <DependentUpon>FormFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormModificarReservas.resx">
+      <DependentUpon>FormModificarReservas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FormReserva.resx">
       <DependentUpon>FormReserva.cs</DependentUpon>

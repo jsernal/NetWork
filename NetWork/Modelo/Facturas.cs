@@ -13,16 +13,19 @@ namespace NetWork.Modelo
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int NumFactura { get; set; }
-        public int IdCliente { get; set; }
+        public string IdCliente { get; set; }
         public int CodigoServicio { get; set; }
         public decimal TotalFactura { get; set; }
+        public DateTime FechaFactura { get; set; }
 
-        public Facturas(int numFactura, int idCliente, int codigoServicio, decimal totalFactura)
+
+        public Facturas(int numFactura, string idCliente, int codigoServicio, decimal totalFactura, DateTime fechaFactura)
         {
             NumFactura = numFactura;
             IdCliente = idCliente;
             CodigoServicio = codigoServicio;
             TotalFactura = totalFactura;
+            FechaFactura = fechaFactura;
         }
         public Facturas() { }
     }
