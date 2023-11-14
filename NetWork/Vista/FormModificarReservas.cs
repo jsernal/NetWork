@@ -18,10 +18,11 @@ namespace NetWork.Vista
             cargarForm();
         }
 
+        //nueva conexión a la bbdd
         ConexionDB db;
         Reservas reserva = new Reservas();
 
-
+        //función de lectura de reserva
         public List<Reservas> Read()
         {
             try
@@ -39,7 +40,7 @@ namespace NetWork.Vista
             }
 
         }
-
+        //función actualizar reserva
         public void Update(Reservas reserva)
         {
             {
@@ -61,6 +62,7 @@ namespace NetWork.Vista
 
             }
         }
+        //función borrar reserva
         public void Delete(int codigoReserva)
         {
             {
@@ -83,7 +85,7 @@ namespace NetWork.Vista
             }
         }
 
-
+        //función cargar datos desde forms a variables de reserva
         private void cargarDatos()
         {
             reserva.CodigoReservas = Convert.ToInt32(textboxCodigoReserva.Text);
@@ -93,16 +95,20 @@ namespace NetWork.Vista
             cargarGrid();
         }
 
+        //ejecutar un read para obtener un listado de datos y visualizar a través de gridview
         private void cargarGrid()
         {
             var Lst = Read();
             dataGridView1.DataSource = Lst;
         }
-
+       
+        //CargarGrid
         private void cargarForm()
         {
             cargarGrid();
         }
+        
+        //Vacíar boxes en el forms
         private void limpiarDatos()
         {
             textboxCodigoReserva.Focus();
@@ -113,14 +119,7 @@ namespace NetWork.Vista
             cargarGrid();
 
         }
-
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        //Eliminar al pulsar botón
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             {
@@ -130,7 +129,8 @@ namespace NetWork.Vista
                 limpiarDatos();
             }
         }
-
+        
+        //Al clickar sobre las filas y celdas del gridview ==> copiar valor a los correspondientes textbox
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             {
@@ -145,6 +145,7 @@ namespace NetWork.Vista
             }
         }
 
+        //Retornar al main menu
         private void button1_Click(object sender, EventArgs e)
         {
             MenuPrincipal registroForm = new MenuPrincipal(EmailUsuario.Text);
@@ -154,21 +155,26 @@ namespace NetWork.Vista
             this.Close();
         }
 
+        //Guardar cambios
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
             DateTime fechaActual = DateTime.Now;
+            int contador = 0;
+
             if (textboxCodigoReserva.Text != string.Empty)
             {
                 cargarDatos();
-                int contador = 0;
+                //para cada fila del gridview
                 foreach (DataGridViewRow r in dataGridView1.Rows)
                 {
-                    if (r.Cells[1].Value.ToString() == Convert.ToString(reserva.Fecha) && r.Cells[3].Value.ToString() == Convert.ToString(reserva.NumHabitacion))
+                    //si el valor de fecha y numHab coinciden con la reserva a modificar, sumador
+                    if (r.Cells["Fecha"].Value.ToString() == Convert.ToString(reserva.Fecha) && r.Cells["NumHabitacion"].Value.ToString() == Convert.ToString(reserva.NumHabitacion))
                     {
                         contador++;
                     }
                 }
-
+                
+                //si el contador es 0, no hay coincidencias de fecha y numHab ==> actualiza la reserva
                 if (contador == 0 && dateTimePickerFechaReserva.Value >= fechaActual.Date)
                     {
                         Update(reserva);
