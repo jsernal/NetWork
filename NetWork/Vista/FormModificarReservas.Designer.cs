@@ -61,12 +61,13 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 32.25F);
-            this.label1.Location = new System.Drawing.Point(160, 9);
+            this.label1.Location = new System.Drawing.Point(197, 28);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(613, 74);
+            this.label1.Size = new System.Drawing.Size(407, 51);
             this.label1.TabIndex = 1;
             this.label1.Text = "Gestión de reservas";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textboxCodigoReserva
             // 
@@ -138,7 +139,7 @@
             this.dateTimePickerFechaReserva.Location = new System.Drawing.Point(173, 146);
             this.dateTimePickerFechaReserva.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dateTimePickerFechaReserva.Name = "dateTimePickerFechaReserva";
-            this.dateTimePickerFechaReserva.Size = new System.Drawing.Size(212, 26);
+            this.dateTimePickerFechaReserva.Size = new System.Drawing.Size(212, 20);
             this.dateTimePickerFechaReserva.TabIndex = 27;
             // 
             // dataGridView1
@@ -146,7 +147,6 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(43, 258);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(702, 260);
             this.dataGridView1.TabIndex = 28;

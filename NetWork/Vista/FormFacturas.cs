@@ -1,8 +1,12 @@
 ﻿using NetWork.Modelo;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace NetWork.Vista
 {
@@ -17,6 +21,28 @@ namespace NetWork.Vista
 
         ConexionDB db;
         Facturas factura = new Facturas();
+
+       /* public void Create(Facturas factura)
+        {
+            {
+                try
+
+                {
+                    using (db = new ConexionDB())
+                    {
+                        db.Facturas.Add(factura);
+                        db.SaveChanges();
+                    }
+
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+        }*/
 
         public List<Facturas> Read()
         {
@@ -36,7 +62,28 @@ namespace NetWork.Vista
 
         }
 
-     /*   public void Delete(int numFactura)
+        public void Update(Facturas factura)        
+        {
+            {
+                try
+
+                {
+                    using (db = new ConexionDB())
+                    {
+                        db.Entry(factura).State = EntityState.Modified;
+                        db.SaveChanges();
+                    }
+
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+        }
+        public void Delete(int numFactura)
         {
             {
                 try
@@ -56,9 +103,8 @@ namespace NetWork.Vista
                 }
 
             }
-        }*/
+        }
 
-        //Buscar servicios por NIF
         public List<Facturas> buscarPorNif(string dniCliente)
         {
             try
@@ -80,8 +126,13 @@ namespace NetWork.Vista
 
         private void cargarDatos()
            {
+          //     factura.NumFactura = Convert.ToInt32(textboxNumFactura.Text);
                factura.IdCliente = textBoxNifCliente.Text;
-                cargarGrid();
+            // factura.CodigoServicio = Convert.ToInt32(textBoxCodServicio.Text);
+               factura.TotalFactura = Convert.ToDecimal(textTotal.Text);
+
+
+            cargarGrid();
            }
 
         private void cargarGrid()
@@ -94,10 +145,33 @@ namespace NetWork.Vista
         {
             cargarGrid();
         }
+        private void limpiarDatos()
+        {
+            //textboxNumFactura.Focus();
+            //textboxNumFactura.Text = string.Empty;
+            textBoxNifCliente.Text = string.Empty;
+            //dateTimePickerFecha.Text = string.Empty;
+            //textBoxCodServicio.Text = string.Empty;
+            cargarGrid();
+
+        }
+
+
+
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
+
+     /*   private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            {
+
+                cargarDatos();
+                Delete(factura.NumFactura);
+                limpiarDatos();
+            }
+        } */
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -107,7 +181,27 @@ namespace NetWork.Vista
 
             this.Close();
         }
-        //Mostrar en Grid solo aquellos servicios para un DNI concreto
+
+        private void textBoxTotalFactura_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void textBoxNifCliente_TextChanged(object sender, EventArgs e)
         {
             if (textBoxNifCliente.Text != String.Empty)
@@ -124,25 +218,24 @@ namespace NetWork.Vista
 
         }
 
-        //Mostrar cantidad total factura
-        private void button2_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            if (textBoxNifCliente.Text == string.Empty)
-            {
-                textTotal.Text = string.Empty;
-            }
-            double suma = 0;
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                if (dataGridView1.Rows[i].Cells[1].Value.Equals(textBoxNifCliente.Text))
-                {
-                    suma += Convert.ToDouble(dataGridView1.Rows[i].Cells["TotalFactura"].Value.ToString());
-                }
-            }
             
-            textTotal.Text = suma.ToString();
-
         }
 
-     }
+        private void textTotal_TextChanged(object sender, EventArgs e)
+        {
+        }
+    }
  }
+
+        /*   private void btnGuardarCambios_Click(object sender, EventArgs e)
+           {
+               if (textboxCodigoReserva.Text != string.Empty)
+               {
+                   cargarDatos();
+                   Update(factura);
+                   limpiarDatos();
+               }
+
+           }*/
