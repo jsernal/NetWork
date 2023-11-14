@@ -65,3 +65,4 @@ C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\obj\Debug\NetWork.Migrat
 C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Vista.FormFacturas.resources
 C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Vista.FormModificarReservas.resources
 C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Migrations.NuevaMigracio.resources
+C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Vista.FormReservasEntradasSalidas.resources

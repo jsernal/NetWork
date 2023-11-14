@@ -110,6 +110,12 @@
     <Compile Include="Vista\FormReserva.Designer.cs">
       <DependentUpon>FormReserva.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FormReservasEntradasSalidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormReservasEntradasSalidas.Designer.cs">
+      <DependentUpon>FormReservasEntradasSalidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FormXML.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FormReserva.resx">
       <DependentUpon>FormReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormReservasEntradasSalidas.resx">
+      <DependentUpon>FormReservasEntradasSalidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FormXML.resx">
       <DependentUpon>FormXML.cs</DependentUpon>
