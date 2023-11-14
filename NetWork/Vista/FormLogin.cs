@@ -20,9 +20,9 @@ namespace HotelSOL
 
             using (ConexionDB db = new ConexionDB())
             {
-                conexion.Open();
+                db.Open();
 
-                string query = "SELECT COUNT(*) FROM Usuarios WHERE Nombre=@Nombre AND Contraseña=@Contraseña";
+                string query = "SELECT COUNT(*) FROM Clientes WHERE Nombre=@Nombre AND Contraseña=@Contraseña";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Nombre", nombre);
