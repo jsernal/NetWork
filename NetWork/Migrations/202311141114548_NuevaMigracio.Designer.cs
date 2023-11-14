@@ -7,13 +7,13 @@ namespace NetWork.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class facturaIDString : IMigrationMetadata
+    public sealed partial class NuevaMigracio : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(facturaIDString));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(NuevaMigracio));
         
         string IMigrationMetadata.Id
         {
-            get { return "202311121459458_facturaIDString"; }
+            get { return "202311141114548_NuevaMigracio"; }
         }
         
         string IMigrationMetadata.Source

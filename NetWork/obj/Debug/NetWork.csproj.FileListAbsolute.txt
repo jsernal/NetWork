@@ -25,9 +25,6 @@ C:\Users\sergi\Desktop\GIT\Network\NetWork\bin\Debug\EntityFramework.SqlServer.d
 C:\Users\sergi\Desktop\GIT\Network\NetWork\bin\Debug\EntityFramework.xml
 C:\Users\sergi\Desktop\GIT\Network\NetWork\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.csproj.AssemblyReference.cache
-C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Migrations.InitialCreate.resources
-C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Migrations.AgregarTablasAdminYRecep.resources
-C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Migrations.CambiarIDSaAutoIncremento.resources
 C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Properties.Resources.resources
 C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Vista.FormClientes.resources
 C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Vista.FormXML.resources
@@ -65,7 +62,6 @@ C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\obj\Debug\NetWork.Vista.
 C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\obj\Debug\NetWork.Vista.FormFacturas.resources
 C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\obj\Debug\NetWork.Migrations.facturaIDString.resources
 C:\Users\Jorge Olleros\Documents\GitHub\NetWork\NetWork\obj\Debug\NetWork.Migrations.FechaFactura.resources
-C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Migrations.facturaIDString.resources
-C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Migrations.FechaFactura.resources
 C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Vista.FormFacturas.resources
 C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Vista.FormModificarReservas.resources
+C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Migrations.NuevaMigracio.resources
