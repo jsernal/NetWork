@@ -87,9 +87,9 @@ namespace NetWork.Vista
         private void cargarDatos()
         {
             reserva.CodigoReservas = Convert.ToInt32(textboxCodigoReserva.Text);
-            reserva.DniCliente = textBoxNifCliente.Text;
+            reserva.DniCliente= textBoxNifCliente.Text;
             reserva.NumHabitacion = Convert.ToInt32(textBoxNumHab.Text);
-            reserva.Fecha = DateTime.Parse(dateTimePickerFechaReserva.Text);
+            reserva.FechaEntrada = DateTime.Parse(dateTimePickerFechaReserva.Text);
             cargarGrid();
         }
 

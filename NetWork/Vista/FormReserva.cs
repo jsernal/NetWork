@@ -149,7 +149,7 @@ namespace NetWork.Vista
                     {
                         Reservas nuevaReserva = new Reservas
                         {
-                            Fecha = date1,
+                            FechaEntrada = date1,
                             DniCliente = cliente.Dni,
                             NumHabitacion = int.Parse(numHabitacion1)
                 };
