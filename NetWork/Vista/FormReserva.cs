@@ -149,7 +149,7 @@ namespace NetWork.Vista
                     {
                         Reservas nuevaReserva = new Reservas
                         {
-                            Fecha = date1,
+                            FechaEntrada = date1,
                             DniCliente = cliente.Dni,
                             NumHabitacion = int.Parse(numHabitacion1)
                 };
@@ -166,7 +166,7 @@ namespace NetWork.Vista
 
                     Facturas nuevaFactura = new Facturas
                     {
-                        IdCliente = cliente.IdCliente, // Suponiendo que hay un campo Id en la tabla Clientes
+                        IdCliente = Convert.ToString(cliente.IdCliente), // Suponiendo que hay un campo Id en la tabla Clientes
                         CodigoServicio = codigoServicio,
                         TotalFactura = totalFactura
                     };

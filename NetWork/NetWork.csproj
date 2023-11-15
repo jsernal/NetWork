@@ -56,17 +56,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202310271544221_InitialCreate.cs" />
-    <Compile Include="Migrations\202310271544221_InitialCreate.designer.cs">
-      <DependentUpon>202310271544221_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202310271602471_AgregarTablasAdminYRecep.cs" />
-    <Compile Include="Migrations\202310271602471_AgregarTablasAdminYRecep.designer.cs">
-      <DependentUpon>202310271602471_AgregarTablasAdminYRecep.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202310271710377_CambiarIDSaAutoIncremento.cs" />
-    <Compile Include="Migrations\202310271710377_CambiarIDSaAutoIncremento.designer.cs">
-      <DependentUpon>202310271710377_CambiarIDSaAutoIncremento.cs</DependentUpon>
+    <Compile Include="Controlador\RecepcionistaControlador.cs" />
+    <Compile Include="Migrations\202311141114548_NuevaMigracio.cs" />
+    <Compile Include="Migrations\202311141114548_NuevaMigracio.designer.cs">
+      <DependentUpon>202311141114548_NuevaMigracio.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Modelo\Administrador.cs" />
@@ -100,11 +93,29 @@
     <Compile Include="Vista\FormClientes.Designer.cs">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FormFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormFacturas.Designer.cs">
+      <DependentUpon>FormFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormModificarReservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormModificarReservas.Designer.cs">
+      <DependentUpon>FormModificarReservas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FormReserva.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\FormReserva.Designer.cs">
       <DependentUpon>FormReserva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormReservasEntradasSalidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormReservasEntradasSalidas.Designer.cs">
+      <DependentUpon>FormReservasEntradasSalidas.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\FormXML.cs">
       <SubType>Form</SubType>
@@ -118,14 +129,8 @@
     <Compile Include="Vista\MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202310271544221_InitialCreate.resx">
-      <DependentUpon>202310271544221_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310271602471_AgregarTablasAdminYRecep.resx">
-      <DependentUpon>202310271602471_AgregarTablasAdminYRecep.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310271710377_CambiarIDSaAutoIncremento.resx">
-      <DependentUpon>202310271710377_CambiarIDSaAutoIncremento.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202311141114548_NuevaMigracio.resx">
+      <DependentUpon>202311141114548_NuevaMigracio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -138,8 +143,17 @@
     <EmbeddedResource Include="Vista\FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormFacturas.resx">
+      <DependentUpon>FormFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormModificarReservas.resx">
+      <DependentUpon>FormModificarReservas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\FormReserva.resx">
       <DependentUpon>FormReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormReservasEntradasSalidas.resx">
+      <DependentUpon>FormReservasEntradasSalidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FormXML.resx">
       <DependentUpon>FormXML.cs</DependentUpon>
@@ -161,9 +175,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controlador\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\images.png" />
   </ItemGroup>
