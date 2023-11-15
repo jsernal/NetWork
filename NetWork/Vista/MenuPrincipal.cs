@@ -105,7 +105,15 @@ namespace NetWork.Vista
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-
+            // Verificar si el EmailUsuario.Text es "recep@hotelsol.com"
+            if (EmailUsuario.Text.Trim().ToLower() == "recep@hotelsol.com")
+            {
+                // Deshabilitar los botones 1, 8, 2 y 4
+                button1.Enabled = false;
+                button8.Enabled = false;
+                button2.Enabled = false;
+                button4.Enabled = false;
+            }
         }
     }
 }
