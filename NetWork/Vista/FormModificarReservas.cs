@@ -85,12 +85,40 @@ namespace NetWork.Vista
 
 
         private void cargarDatos()
-        {
+        {  
+               
+            int idCliente = ObtenerIdClientePorDNI(textBoxNifCliente.Text);
+
+            // Asignar el ID del cliente a la reserva
+            reserva.IdCliente = idCliente;
             reserva.CodigoReservas = Convert.ToInt32(textboxCodigoReserva.Text);
-            reserva.DniCliente= textBoxNifCliente.Text;
+            reserva.IdCliente = idCliente; 
             reserva.NumHabitacion = Convert.ToInt32(textBoxNumHab.Text);
             reserva.FechaEntrada = DateTime.Parse(dateTimePickerFechaReserva.Text);
+
+          
+
             cargarGrid();
+        }
+
+        private int ObtenerIdClientePorDNI(string dni)
+        {
+            using (ConexionDB db = new ConexionDB())
+            {
+                // Buscar el cliente por el DNI proporcionado
+                var cliente = db.Clientes.FirstOrDefault(c => c.Dni == dni);
+
+                // Verificar si se encontró el cliente
+                if (cliente != null)
+                {
+                    // Devolver el ID del cliente
+                    return cliente.IdCliente;
+                }
+
+                // Si no se encuentra el cliente, puedes manejarlo de acuerdo a tus necesidades
+                // Por ejemplo, lanzar una excepción, devolver un valor predeterminado, etc.
+                throw new Exception("Cliente no encontrado");
+            }
         }
 
         private void cargarGrid()
@@ -163,7 +191,7 @@ namespace NetWork.Vista
                 int contador = 0;
                 foreach (DataGridViewRow r in dataGridView1.Rows)
                 {
-                    if (r.Cells[1].Value.ToString() == Convert.ToString(reserva.Fecha) && r.Cells[3].Value.ToString() == Convert.ToString(reserva.NumHabitacion))
+                    if (r.Cells[1].Value.ToString() == Convert.ToString(reserva.FechaEntrada) && r.Cells[3].Value.ToString() == Convert.ToString(reserva.NumHabitacion))
                     {
                         contador++;
                     }

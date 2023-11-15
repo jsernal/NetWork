@@ -95,5 +95,17 @@ namespace NetWork.Vista
             formulario.Show();
             this.Hide();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Form formulario = new FormHabitaciones(EmailUsuario.Text);
+            formulario.Show();
+            this.Hide();
+        }
+
+        private void MenuPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

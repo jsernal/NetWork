@@ -40,8 +40,8 @@ namespace NetWork.Vista
                         // Verificar si alguna reserva coincide con la habitación y la fecha seleccionada
                         foreach (var reserva in res)
                         {
-                            if (reserva.NumHabitacion == habitacion.NumHabitacion && (reserva.Fecha.Date.Year == fechaSeleccionada.Year &&
-                                reserva.Fecha.Date.Month == fechaSeleccionada.Month && reserva.Fecha.Date.Day == fechaSeleccionada.Day))
+                            if (reserva.NumHabitacion == habitacion.NumHabitacion && (reserva.FechaEntrada.Date.Year == fechaSeleccionada.Year &&
+                                reserva.FechaEntrada.Date.Month == fechaSeleccionada.Month && reserva.FechaEntrada.Date.Day == fechaSeleccionada.Day))
                             {
                                 estaDisponible = false;
                                 habitacion.Estado = "Ocupado";

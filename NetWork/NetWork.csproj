@@ -57,9 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controlador\RecepcionistaControlador.cs" />
-    <Compile Include="Migrations\202311141114548_NuevaMigracio.cs" />
-    <Compile Include="Migrations\202311141114548_NuevaMigracio.designer.cs">
-      <DependentUpon>202311141114548_NuevaMigracio.cs</DependentUpon>
+    <Compile Include="Migrations\202311151145029_NuevaMigracion.cs" />
+    <Compile Include="Migrations\202311151145029_NuevaMigracion.designer.cs">
+      <DependentUpon>202311151145029_NuevaMigracion.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Modelo\Administrador.cs" />
@@ -99,6 +99,12 @@
     <Compile Include="Vista\FormFacturas.Designer.cs">
       <DependentUpon>FormFacturas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FormHabitaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormHabitaciones.Designer.cs">
+      <DependentUpon>FormHabitaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FormModificarReservas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,8 +135,8 @@
     <Compile Include="Vista\MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202311141114548_NuevaMigracio.resx">
-      <DependentUpon>202311141114548_NuevaMigracio.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202311151145029_NuevaMigracion.resx">
+      <DependentUpon>202311151145029_NuevaMigracion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FormFacturas.resx">
       <DependentUpon>FormFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormHabitaciones.resx">
+      <DependentUpon>FormHabitaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FormModificarReservas.resx">
       <DependentUpon>FormModificarReservas.cs</DependentUpon>

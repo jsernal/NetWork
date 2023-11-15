@@ -139,26 +139,28 @@ namespace NetWork.Vista
                     }
 
                 // Si el email y el DNI pertenecen al mismo cliente, continuar con la lógica adicional del botón
-                // Obtener datos para la reserva
-                    DateTime fechaEntrada = data;
-                    DateTime fechaSalida = dateTimePicker1.Value;
-                    string numHabitacion1 = label9.Text;
 
-                    // Insertar datos de reserva por cada día entre fecha de entrada y salida
-                    for (DateTime date1 = fechaEntrada; date1 <= fechaSalida; date1 = date1.AddDays(1))
+                DateTime fechaEntrada = data;
+                DateTime fechaSalida = dateTimePicker1.Value;
+                string numHabitacion1 = label9.Text;
+
+                // Insertar datos de reserva por cada día entre fecha de entrada y salida
+                for (DateTime date1 = fechaEntrada; date1 <= fechaSalida; date1 = date1.AddDays(1))
+                {
+                    Reservas nuevaReserva = new Reservas
                     {
-                        Reservas nuevaReserva = new Reservas
-                        {
-                            FechaEntrada = date1,
-                            DniCliente = cliente.Dni,
-                            NumHabitacion = int.Parse(numHabitacion1)
-                };
+                        FechaEntrada = date1,
+                        FechaSalida = fechaSalida,
+                        IdCliente = cliente.IdCliente,
+                        NumHabitacion = int.Parse(numHabitacion1)
+                    };
 
-                        db.Reservas.Add(nuevaReserva);
-                    }
+                    db.Reservas.Add(nuevaReserva);
+                }
 
-                    // Guardar los cambios en la base de datos
-                    db.SaveChanges();
+
+                // Guardar los cambios en la base de datos
+                db.SaveChanges();
 
                     // Insertar en la tabla Factura
                     int codigoServicio = comboBox1.SelectedIndex + 1; // Sumamos 1 porque los índices comienzan en 0
