@@ -57,9 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controlador\RecepcionistaControlador.cs" />
-    <Compile Include="Migrations\202311151145029_NuevaMigracion.cs" />
-    <Compile Include="Migrations\202311151145029_NuevaMigracion.designer.cs">
-      <DependentUpon>202311151145029_NuevaMigracion.cs</DependentUpon>
+    <Compile Include="Migrations\202311171148217_NombreDeLaMigracion.cs" />
+    <Compile Include="Migrations\202311171148217_NombreDeLaMigracion.designer.cs">
+      <DependentUpon>202311171148217_NombreDeLaMigracion.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Modelo\Administrador.cs" />
@@ -135,8 +135,8 @@
     <Compile Include="Vista\MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202311151145029_NuevaMigracion.resx">
-      <DependentUpon>202311151145029_NuevaMigracion.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202311171148217_NombreDeLaMigracion.resx">
+      <DependentUpon>202311171148217_NombreDeLaMigracion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

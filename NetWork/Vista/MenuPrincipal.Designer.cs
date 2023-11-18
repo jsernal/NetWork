@@ -156,6 +156,7 @@
             this.button8.TabIndex = 11;
             this.button8.Text = "Registro Habitación";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click_1);
             // 
             // MenuPrincipal
             // 

@@ -14,17 +14,49 @@ namespace NetWork.Vista
 {
         public partial class FormHabitaciones : Form
         {
-            private ConexionDB contexto; // Asegúrate de tener tu contexto de Entity Framework aquí
 
             public FormHabitaciones(string emailUsuario)
             {
                 InitializeComponent();
             EmailUsuario.Text = emailUsuario;
-            contexto = new ConexionDB(); // Asegúrate de inicializar tu contexto correctamente
+           // contexto = new ConexionDB(); // Asegúrate de inicializar tu contexto correctamente
             }
 
-            private void button1_Click(object sender, EventArgs e)
+            private int ObtenerCodigoTipoHabitacion(string tipoSeleccionado)
             {
+                // Mapear el tipo de habitación seleccionado en el ComboBox a su código correspondiente
+                switch (tipoSeleccionado)
+                {
+                    case "Habitación Estándar":
+                        return 101;
+                    case "Suite de Lujo":
+                        return 102;
+                    case "Habitación Familiar":
+                        return 103;
+                    case "Habitación Individual":
+                        return 104;
+                    case "Habitación Doble":
+                        return 105;
+                    default:
+                        throw new ArgumentException("Tipo de habitación no reconocido");
+                }
+            }
+        
+        private void FormHabitaciones_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Form formulario = new MenuPrincipal(EmailUsuario.Text);
+            formulario.Show();
+            this.Hide();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            ConexionDB contexto = new ConexionDB(); // Asegúrate de tener tu contexto de Entity Framework aquí
             // Verificar si TextBox1 no está vacío y solo contiene números
             if (!string.IsNullOrEmpty(textBox1.Text) && int.TryParse(textBox1.Text, out int numeroHabitacion))
             {
@@ -48,8 +80,8 @@ namespace NetWork.Vista
                         };
 
                         // Agregar la nueva habitación a la base de datos y guardar los cambios
-                        contexto.Habitaciones.Add(nuevaHabitacion);
-                        contexto.SaveChanges();
+                         contexto.Habitaciones.Add(nuevaHabitacion);
+                         contexto.SaveChanges();
 
                         MessageBox.Show("Habitación creada exitosamente.");
                     }
@@ -67,39 +99,6 @@ namespace NetWork.Vista
             {
                 MessageBox.Show("Por favor, ingresa un número de habitación válido.");
             }
-        }
-
-            private int ObtenerCodigoTipoHabitacion(string tipoSeleccionado)
-            {
-                // Mapear el tipo de habitación seleccionado en el ComboBox a su código correspondiente
-                switch (tipoSeleccionado)
-                {
-                    case "Habitación Estándar":
-                        return 101;
-                    case "Suite de Lujo":
-                        return 102;
-                    case "Habitación Familiar":
-                        return 103;
-                    case "Habitación Individual":
-                        return 104;
-                    case "Habitación Doble":
-                        return 105;
-                    default:
-                        throw new ArgumentException("Tipo de habitación no reconocido");
-                }
-            }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Form formulario = new MenuPrincipal(EmailUsuario.Text);
-            formulario.Show();
-            this.Hide();
-        }
-
-
-        private void FormHabitaciones_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

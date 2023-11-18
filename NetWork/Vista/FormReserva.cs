@@ -170,7 +170,8 @@ namespace NetWork.Vista
                     {
                         IdCliente = Convert.ToString(cliente.IdCliente), // Suponiendo que hay un campo Id en la tabla Clientes
                         CodigoServicio = codigoServicio,
-                        TotalFactura = totalFactura
+                        TotalFactura = totalFactura,
+                        FechaFactura = fechaEntrada
                     };
 
                     db.Facturas.Add(nuevaFactura);

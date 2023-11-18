@@ -96,12 +96,6 @@ namespace NetWork.Vista
             this.Hide();
         }
 
-        private void button8_Click(object sender, EventArgs e)
-        {
-            Form formulario = new FormHabitaciones(EmailUsuario.Text);
-            formulario.Show();
-            this.Hide();
-        }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
@@ -114,6 +108,13 @@ namespace NetWork.Vista
                 button2.Enabled = false;
                 button4.Enabled = false;
             }
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+            Form formulario = new FormHabitaciones(EmailUsuario.Text);
+            formulario.Show();
+            this.Hide();
         }
     }
 }
