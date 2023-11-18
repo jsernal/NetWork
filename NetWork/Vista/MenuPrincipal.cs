@@ -42,16 +42,6 @@ namespace NetWork.Vista
         }
 
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-            /*  FormEntradasSalidas registroForm = new FormEntradasSalidas();
-             *  registroForm.Show();
-             *  this.Hide();*/
-
-
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
 
@@ -114,6 +104,13 @@ namespace NetWork.Vista
         {
             Form formulario = new FormHabitaciones(EmailUsuario.Text);
             formulario.Show();
+            this.Hide();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            FormReservasEntradasSalidas registroForm = new FormReservasEntradasSalidas();
+            registroForm.Show();
             this.Hide();
         }
     }
