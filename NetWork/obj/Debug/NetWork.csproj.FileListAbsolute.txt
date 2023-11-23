@@ -67,5 +67,4 @@ C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Vista.FormModificar
 C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Vista.FormReservasEntradasSalidas.resources
 C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Vista.FormHabitaciones.resources
 C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Migrations.NombreDeLaMigracion.resources
-C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\ProyectoGuruData.Vista.FormOdoo.resources
-C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\Network.Vista.FormOdoo.resources
+C:\Users\sergi\Desktop\GIT\Network\NetWork\obj\Debug\NetWork.Vista.FormConOdoo.resources
