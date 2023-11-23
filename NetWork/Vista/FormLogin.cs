@@ -2,12 +2,12 @@ using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace HotelSOL
+namespace Network.Vista
 {
     public partial class FormLogin : Form
     {
         private const string ConexionString = "Data Source=(local);Initial Catalog=DB;Integrated Security=True";
-        
+
         public FormLogin()
         {
             InitializeComponent();
@@ -18,9 +18,9 @@ namespace HotelSOL
             string nombre = txtUsuario.Text;
             string contraseña = txtContraseña.Text;
 
-            using (ConexionDB db = new ConexionDB())
+            using (SqlConnection connection = new SqlConnection(ConexionString))
             {
-                db.Open();
+                connection.Open();
 
                 string query = "SELECT COUNT(*) FROM Clientes WHERE Nombre=@Nombre AND Contraseña=@Contraseña";
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -33,7 +33,6 @@ namespace HotelSOL
                     if (count > 0)
                     {
                         MessageBox.Show("Inicio de sesión exitoso");
-                      
                     }
                     else
                     {
