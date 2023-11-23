@@ -113,5 +113,12 @@ namespace NetWork.Vista
             registroForm.Show();
             this.Hide();
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            FormOdoo registroForm = new FormOdoo();
+            registroForm.Show();
+            this.Hide();
+        }
     }
 }

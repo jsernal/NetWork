@@ -16,7 +16,7 @@ namespace NetWork
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new NetWork.Vista.MenuPrincipal("sbrudi@uoc.com"));
+            Application.Run(new NetWork.Vista.MenuPrincipal("admin@hotelsol.com"));
 
         }
     }

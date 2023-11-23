@@ -93,6 +93,12 @@
     <Compile Include="Vista\FormClientes.Designer.cs">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FormConOdoo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormConOdoo.Designer.cs">
+      <DependentUpon>FormConOdoo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FormFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,12 @@
     </Compile>
     <Compile Include="Vista\FormModificarReservas.Designer.cs">
       <DependentUpon>FormModificarReservas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormOdoo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormOdoo.designer.cs">
+      <DependentUpon>FormOdoo.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\FormReserva.cs">
       <SubType>Form</SubType>
@@ -149,6 +161,9 @@
     <EmbeddedResource Include="Vista\FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormConOdoo.resx">
+      <DependentUpon>FormConOdoo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\FormFacturas.resx">
       <DependentUpon>FormFacturas.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FormModificarReservas.resx">
       <DependentUpon>FormModificarReservas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormOdoo.resx">
+      <DependentUpon>FormOdoo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FormReserva.resx">
       <DependentUpon>FormReserva.cs</DependentUpon>
@@ -184,7 +202,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Controlador\OdooHabitaciones.py" />
+    <Content Include="Controlador\OdooClientes.py" />
+    <Content Include="Controlador\OdooReservas.py" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\images.png" />
   </ItemGroup>
