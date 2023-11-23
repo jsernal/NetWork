@@ -1,8 +1,7 @@
 using System;
-using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace Network.Vista
+namespace NetWork.Vista
 {
     public partial class FormLogin : Form
     {
@@ -18,12 +17,12 @@ namespace Network.Vista
             string nombre = txtUsuario.Text;
             string contraseña = txtContraseña.Text;
 
-            using (SqlConnection connection = new SqlConnection(ConexionString))
+            using (ConexionDB db = new ConexionDB())
             {
-                connection.Open();
+                db.Open();
 
                 string query = "SELECT COUNT(*) FROM Clientes WHERE Nombre=@Nombre AND Contraseña=@Contraseña";
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlCommand command = new SqlCommand(query, db.Connection))
                 {
                     command.Parameters.AddWithValue("@Nombre", nombre);
                     command.Parameters.AddWithValue("@Contraseña", contraseña);
