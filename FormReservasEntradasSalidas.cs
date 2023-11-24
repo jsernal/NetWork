@@ -20,7 +20,7 @@ namespace NetWork.Vista
         public FormReservasEntradasSalidas()
         {
             InitializeComponent();
-            this.btnEntrSal.Click += new System.EventHandler(this.btnEntrSal_Click);
+            this.btnEntrSal.Click += new System.EventHandler(this.btnEntrSal_Click_1);
             recepcionistaControlador = new RecepcionistaControlador();
             
         }
@@ -34,27 +34,6 @@ namespace NetWork.Vista
         {
 
         }
-       private void btnEntrSal_Click(object sender, EventArgs e)
-{
-    try
-    {
-        var controlador = new RecepcionistaControlador();
-        var fechaSalida = dateTimePicker1.Value;
-
-        // Llama al controlador para obtener las reservas con clientes
-        var reservasConClientes = controlador.ConsultarReservas(fechaSalida);
-
-                // Recorre las reservas y accede al nombre del cliente
-
-
-                dataGridView1.AutoGenerateColumns = false;
-                dataGridView1.DataSource = reservasConClientes;
-    }
-    catch (Exception ex)
-    {
-        MessageBox.Show(ex.Message, "Error al realizar la consulta");
-    }
-}
 
         private void txtbFirmar_TextChanged(object sender, EventArgs e)
         {
@@ -93,6 +72,26 @@ namespace NetWork.Vista
            
         }
 
-        
+        private void btnEntrSal_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                var controlador = new RecepcionistaControlador();
+                var fechaSalida = dateTimePicker1.Value;
+
+                // Llama al controlador para obtener las reservas con clientes
+                var reservasConClientes = controlador.ConsultarReservas(fechaSalida);
+
+                // Recorre las reservas y accede al nombre del cliente
+
+
+                dataGridView1.AutoGenerateColumns = false;
+                dataGridView1.DataSource = reservasConClientes;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error al realizar la consulta");
+            }
+        }
     }
 }

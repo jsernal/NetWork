@@ -19,6 +19,8 @@ namespace NetWork.Modelo
         public int NumHabitacion { get; set; }
         public int EstadoReserva {  get; set; }
         [NotMapped]
+        public Habitaciones Habitacion { get; set; }
+        [NotMapped]
         public string EstadoReservaTexto
         {
             get

@@ -1,4 +1,4 @@
-using NetWork.Modelo;
+﻿using NetWork.Modelo;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -11,6 +11,51 @@ namespace NetWork.Controlador
 {
     public class RecepcionistaControlador
     {
+        public static bool VerificarDisponibilidad(int numHabitacion, DateTime fechaEntrada, DateTime fechaSalida)
+        {
+            using (var context = new ConexionDB())
+            {
+                return !context.Reservas
+                    .Any(r => r.NumHabitacion == numHabitacion &&
+                              r.FechaEntrada < fechaSalida &&
+                              r.FechaSalida > fechaEntrada);
+            }
+        }
+        public List<HistorialCliente> ConsultarHistorial(int idCliente)
+        {
+            using (var context = new ConexionDB())
+            {
+
+                var historialClientes = context.Reservas
+                .Include(r => r.Cliente)
+                .Where(r => r.Cliente.IdCliente == idCliente)
+                .Join(context.Habitaciones, 
+                 reserva => reserva.NumHabitacion,
+                habitacion => habitacion.NumHabitacion,
+                (reserva, habitacion) => new { Reserva = reserva, Habitacion = habitacion })
+                .Select(r => new HistorialCliente 
+           {
+               CodigoReservas = r.Reserva.CodigoReservas,
+               FechaEntrada = r.Reserva.FechaEntrada,
+               FechaSalida = r.Reserva.FechaSalida,
+               NombreCliente = r.Reserva.Cliente.Nombre,
+               NumHabitacion = r.Reserva.NumHabitacion,
+               DescripcionTipoHabitacion = r.Habitacion.Tipo.Descripcion
+           })
+           .ToList();
+
+                return historialClientes;
+            }
+        }
+        public class HistorialCliente
+        {
+            public int CodigoReservas { get; set; }
+            public DateTime FechaEntrada { get; set; }
+            public DateTime FechaSalida { get; set; }
+            public string NombreCliente { get; set; }
+            public int NumHabitacion { get; set; }
+            public string DescripcionTipoHabitacion { get; set; }
+        }
         public List<Reservas> ConsultarReservas(DateTime fechaSalida)
         {
             using (var context = new ConexionDB())
@@ -19,7 +64,7 @@ namespace NetWork.Controlador
 
                 var reservasConClientes = context.Reservas
                     .Include(r => r.Cliente)
-                    .Where(r => r.FechaEntrada >= fechaEntrada && r.FechaSalida <= fechaSalida)
+                    .Where(r => r.FechaEntrada <= fechaSalida && r.FechaSalida >= fechaEntrada)
                     .Select(r => new
                     {
                         CodigoReservas = r.CodigoReservas,
@@ -92,7 +137,7 @@ namespace NetWork.Controlador
 
                 var reservasAtrasadas = context.Reservas
                     .Include(r => r.Cliente)
-                    .Where(r => r.FechaEntrada <= fechaActual)
+                    .Where(r => r.FechaEntrada <= fechaActual && r.EstadoReserva == 0)
                     .Select(r => new
                     {
                         CodigoReservas = r.CodigoReservas,

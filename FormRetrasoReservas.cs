@@ -61,5 +61,10 @@ namespace NetWork.Vista
                 MessageBox.Show(ex.Message, "Error al realizar la consulta");
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -30,22 +30,24 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dGWRetraso = new System.Windows.Forms.DataGridView();
-            this.btnVerRes = new System.Windows.Forms.Button();
             this.CodigoReservas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVerRes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGWRetraso)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(255, 66);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(295, 13);
+            this.label1.Size = new System.Drawing.Size(307, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Estas son las Reservas que no han llegado a la hora prevista";
+            this.label1.Text = "Consultar reservas con retraso";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dGWRetraso
             // 
@@ -60,16 +62,6 @@
             this.dGWRetraso.Size = new System.Drawing.Size(444, 150);
             this.dGWRetraso.TabIndex = 1;
             this.dGWRetraso.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGWRetraso_CellContentClick);
-            // 
-            // btnVerRes
-            // 
-            this.btnVerRes.Location = new System.Drawing.Point(358, 118);
-            this.btnVerRes.Name = "btnVerRes";
-            this.btnVerRes.Size = new System.Drawing.Size(75, 23);
-            this.btnVerRes.TabIndex = 2;
-            this.btnVerRes.Text = "Verificar Reservas";
-            this.btnVerRes.UseVisualStyleBackColor = true;
-            this.btnVerRes.Click += new System.EventHandler(this.btnVerRes_Click);
             // 
             // CodigoReservas
             // 
@@ -94,6 +86,16 @@
             this.Telefono.DataPropertyName = "TelefonoCliente";
             this.Telefono.HeaderText = "Telefono";
             this.Telefono.Name = "Telefono";
+            // 
+            // btnVerRes
+            // 
+            this.btnVerRes.Location = new System.Drawing.Point(358, 118);
+            this.btnVerRes.Name = "btnVerRes";
+            this.btnVerRes.Size = new System.Drawing.Size(75, 23);
+            this.btnVerRes.TabIndex = 2;
+            this.btnVerRes.Text = "Verificar Reservas";
+            this.btnVerRes.UseVisualStyleBackColor = true;
+            this.btnVerRes.Click += new System.EventHandler(this.btnVerRes_Click);
             // 
             // FormRetrasoReservas
             // 
