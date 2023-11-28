@@ -10,6 +10,8 @@ namespace NetWork.Modelo
 {
     public class ConexionDB : DbContext
     {
+       
+
         public ConexionDB() : base("name=ConexionDB")
         {
         }
@@ -24,6 +26,7 @@ namespace NetWork.Modelo
         public DbSet<Servicios> Servicios { get; set; }
         public DbSet<TipoAlojamiento> TipoAlojamiento { get; set; }
         public DbSet<TipoHabitacion> TipoHabitacion { get; set; }
+       
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -14,8 +14,9 @@ namespace NetWork.Vista
 {
         public partial class FormHabitaciones : Form
         {
+            public bool mensajeMostrado { get; private set; }
 
-            public FormHabitaciones(string emailUsuario)
+        public FormHabitaciones(string emailUsuario)
             {
                 InitializeComponent();
             EmailUsuario.Text = emailUsuario;
@@ -47,14 +48,14 @@ namespace NetWork.Vista
 
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+        public void button2_Click_1(object sender, EventArgs e)
         {
             Form formulario = new MenuPrincipal(EmailUsuario.Text);
             formulario.Show();
             this.Hide();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        public void button1_Click_1(object sender, EventArgs e)
         {
             ConexionDB contexto = new ConexionDB(); 
             if (!string.IsNullOrEmpty(textBox1.Text) && int.TryParse(textBox1.Text, out int numeroHabitacion))
@@ -87,16 +88,19 @@ namespace NetWork.Vista
                     else
                     {
                         MessageBox.Show("Tipo de habitación no encontrado en la base de datos.");
+                        mensajeMostrado = true;
                     }
                 }
                 else
                 {
                     MessageBox.Show("El número de habitación ya existe en la base de datos.");
+                    mensajeMostrado = true;
                 }
             }
             else
             {
                 MessageBox.Show("Por favor, ingresa un número de habitación válido.");
+                mensajeMostrado = true;
             }
         }
     }
