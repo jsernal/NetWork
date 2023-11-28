@@ -42,19 +42,77 @@ namespace NetWork
                 CodigoTipoHabit = 1,
                 Descripcion = "Habitación Estándar",
                 Capacidad = 16,
-                PrecioBase = 85.30M
+                PrecioBase = 55.30M
             };
 
             dbContext.TipoHabitacion.Add(tipoHabitacion1);
 
+            var tipoHabitacion2 = new TipoHabitacion
+            {
+                CodigoTipoHabit = 2,
+                Descripcion = "Suite de Lujo",
+                Capacidad = 26,
+                PrecioBase = 185.30M
+            };
+
+            dbContext.TipoHabitacion.Add(tipoHabitacion2);
+
+            var tipoHabitacion3 = new TipoHabitacion
+            {
+                CodigoTipoHabit = 3,
+                Descripcion = "Habitación Familiar",
+                Capacidad = 26,
+                PrecioBase = 85.30M
+            };
+
+            dbContext.TipoHabitacion.Add(tipoHabitacion3);
+
+            var tipoHabitacion4 = new TipoHabitacion
+            {
+                CodigoTipoHabit = 4,
+                Descripcion = "Habitación Individual",
+                Capacidad = 14,
+                PrecioBase = 45.30M
+            };
+
+            dbContext.TipoHabitacion.Add(tipoHabitacion4);
+
+            var tipoHabitacion5 = new TipoHabitacion
+            {
+                CodigoTipoHabit = 5,
+                Descripcion = "Habitación Doble",
+                Capacidad = 20,
+                PrecioBase = 95.30M
+            };
+
+            dbContext.TipoHabitacion.Add(tipoHabitacion5);
+
             var servicio1  = new Servicios
             {
                 CodigoServicio = 1,
-                Tipo = TipoServicio.Lavanderia,
-                Precio = 8.50M
+                Tipo = TipoServicio.Restaurante,
+                Precio = 28.50M
             };
 
             dbContext.Servicios.Add(servicio1);
+
+            var servicio2 = new Servicios
+            {
+                CodigoServicio = 2,
+                Tipo = TipoServicio.Lavanderia,
+                Precio = 8.50M
+            };
+            dbContext.Servicios.Add(servicio2);
+
+
+            var servicio3 = new Servicios
+            {
+                CodigoServicio = 3,
+                Tipo = TipoServicio.Gimnasio,
+                Precio = 10.50M
+            };
+
+            dbContext.Servicios.Add(servicio3);
 
             var tipoAloj1 = new TipoAlojamiento
             {

@@ -11,7 +11,6 @@ namespace NetWork.Modelo
     public class TipoAlojamiento
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CodigoTipoAloj { get; set; }
         public string Descripcion { get; set; }
         public decimal Precio { get; set; }
