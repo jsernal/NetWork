@@ -10,7 +10,6 @@ namespace NetWork.Modelo
     {
         public Administrador(int codigoEmpleado, string nombre, string dni, string telefono)
         {
-            
             CodigoEmpleado = codigoEmpleado;
             Nombre = nombre;
             Dni = dni;
