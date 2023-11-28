@@ -15,7 +15,6 @@ namespace NetWork.Vista
             cargarForm();
         }
 
-        ConexionDB db;
         public Facturas factura = new Facturas();
         public Reservas reserva = new Reservas();
 
