@@ -45,16 +45,16 @@ namespace NetWork.Vista
                                                 new XAttribute("Tipo", x.Tipo)
                                            )));
 
-            FileStream xmlFile = File.OpenWrite(@"C:\Users\sergi\Desktop\GIT\Network\NetWork\Controlador\\Habitaciones.xml");
+            FileStream xmlFile = File.OpenWrite(@"C:\Users\sergi\Documents\GitHub\NetWork\NetWork\Controlador\\Habitaciones.xml");
             byte[] xmlBytes = Encoding.UTF8.GetBytes(xml.ToString());
             xmlFile.Write(xmlBytes, 0, xmlBytes.Length);
             xmlFile.Close();
 
             // pasamos el xml al programa python
-            var script = @"C:\Users\sergi\Desktop\GIT\Network\NetWork\Controlador\OdooActividades.py";        // ESCIRBIR LA DIRECCIÓN DEL PY      
+            var script = @"C:\Users\sergi\Documents\GitHub\NetWork\NetWork\Controlador\OdooActividades.py";        // ESCIRBIR LA DIRECCIÓN DEL PY      
 
             var psi = new ProcessStartInfo();
-            psi.FileName = @"C:\Python311\python.exe";
+            psi.FileName = @"C:\Users\sergi\AppData\Local\Programs\Python\Python312\python.exe";
             psi.Arguments = $"\"{script}\"";
             Process process = new Process();
             process.StartInfo = psi;
@@ -109,16 +109,15 @@ namespace NetWork.Vista
                                                 new XAttribute("EstadoReserva", x.EstadoReserva)
                                            )));
 
-            FileStream xmlFile = File.OpenWrite(@"C:\Users\sergi\Desktop\GIT\Network\NetWork\Controlador\\Reservas.xml");
+            FileStream xmlFile = File.OpenWrite(@"C:\Users\sergi\Documents\GitHub\NetWork\NetWork\Controlador\\Reservas.xml");
             byte[] xmlBytes = Encoding.UTF8.GetBytes(xml.ToString());
             xmlFile.Write(xmlBytes, 0, xmlBytes.Length);
             xmlFile.Close();
 
             // pasamos el xml al programa python
-            var script = @"C:\Users\sergi\Desktop\GIT\Network\NetWork\Controlador\OdooReservas.py";        // ESCIRBIR LA DIRECCIÓN DEL PY        
+            var script = @"C:\Users\sergi\Documents\GitHub\NetWork\NetWork\Controlador\OdooReservas.py";        // ESCIRBIR LA DIRECCIÓN DEL PY        
             var psi = new ProcessStartInfo();
-            //psi.FileName = @"C:\Users\kater\OneDrive\Documentos\NET_PROD4\DataGuru\ProyectoGuruData\Controlador\python.exe"; //// 
-            psi.FileName = @"C:\Python311\python.exe";
+            psi.FileName = @"C:\Users\sergi\AppData\Local\Programs\Python\Python312\python.exe";
             psi.Arguments = $"\"{script}\"";
             Process process = new Process();
             process.StartInfo = psi;
@@ -165,16 +164,16 @@ namespace NetWork.Vista
                                                 new XAttribute("Tipo", x.Tipo)
                                            )));
 
-            FileStream xmlFile = File.OpenWrite(@"C:\Users\sergi\Desktop\GIT\Network\NetWork\Controlador\\Clientes.xml");
+            FileStream xmlFile = File.OpenWrite(@"C:\Users\sergi\Documents\GitHub\NetWork\NetWork\Controlador\\Clientes.xml");
             byte[] xmlBytes = Encoding.UTF8.GetBytes(xml.ToString());
             xmlFile.Write(xmlBytes, 0, xmlBytes.Length);
             xmlFile.Close();
 
             // pasamos el xml al programa python
-            var script = @"C:\Users\sergi\Desktop\GIT\Network\NetWork\Controlador\OdooClientes.py";        // ESCIRBIR LA DIRECCIÓN DEL PY
+            var script = @"C:\Users\sergi\Documents\GitHub\NetWork\NetWork\Controlador\OdooClientes.py";        // ESCIRBIR LA DIRECCIÓN DEL PY
 
             var psi = new ProcessStartInfo();
-            psi.FileName = @"C:\Python311\python.exe";
+            psi.FileName = @"C:\Users\sergi\AppData\Local\Programs\Python\Python312\python.exe";
             psi.Arguments = $"\"{script}\"";
             Process process = new Process();
             process.StartInfo = psi;

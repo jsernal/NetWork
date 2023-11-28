@@ -57,9 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controlador\RecepcionistaControlador.cs" />
-    <Compile Include="Migrations\202311171148217_NombreDeLaMigracion.cs" />
-    <Compile Include="Migrations\202311171148217_NombreDeLaMigracion.designer.cs">
-      <DependentUpon>202311171148217_NombreDeLaMigracion.cs</DependentUpon>
+    <Compile Include="Migrations\202311282210277_NuevaMigracion.cs" />
+    <Compile Include="Migrations\202311282210277_NuevaMigracion.designer.cs">
+      <DependentUpon>202311282210277_NuevaMigracion.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Modelo\Administrador.cs" />
@@ -141,8 +141,8 @@
     <Compile Include="Vista\MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202311171148217_NombreDeLaMigracion.resx">
-      <DependentUpon>202311171148217_NombreDeLaMigracion.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202311282210277_NuevaMigracion.resx">
+      <DependentUpon>202311282210277_NuevaMigracion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -201,6 +201,7 @@
   <ItemGroup>
     <None Include="Resources\images.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
