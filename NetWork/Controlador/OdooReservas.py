@@ -1,9 +1,9 @@
 import xml.etree.ElementTree as ET
 import xmlrpc.client
 
-url = 'https://dataguru.odoo.com'
-DB='dataguru'
-USER='khlazovska@uoc.edu'
+url = 'http://localhost:8069'
+DB='Network'
+USER='sbrudi@uoc.edu'
 PASS='password'
 
 common = xmlrpc.client.ServerProxy('{}/xmlrpc/2/common'.format(url))
@@ -14,16 +14,16 @@ models = xmlrpc.client.ServerProxy('{}/xmlrpc/2/object'.format(url))
 uid = common.authenticate(DB, USER, PASS, {})
 
 if uid:
-    archivo_xml = ET.parse('C:/Users/kater/OneDrive/Documentos/NET_PROD4/DataGuru/ProyectoGuruData/Controlador/Reservas.xml')
+    archivo_xml = ET.parse('C:/Users/sergi/Documents/GitHub/NetWork/NetWork/Controlador/Reservas.xml')
     xml = archivo_xml.getroot()
     for i in xml:
         do_write = models.execute(DB,uid,PASS,'x_reservas','create',[{
-            'x_studio_x_id': i[0].text,
-            'x_studio_x_resercaXcliente': i[1].text,
-            'x_studio_x_fecha_hora': i[2].text,
-            'x_studio_x_estado': i[3].text,
-            'x_studio_x_cliente': i[4].text,
-            'x_studio_x_actividad': i[5].text,
+            'x_studio_x_CodigoReservas': i[0].text,
+            'x_studio_x_NumHabitacion': i[1].text,
+            'x_studio_x_FechaEntrada': i[2].text,
+            'x_studio_x_FechaSalida': i[3].text,
+            'x_studio_x_IdCliente': i[4].text,
+            'x_studio_x_EstadoReserva': i[5].text,
             }])
     print('Las reservas se han cargado correctamente')
 else:

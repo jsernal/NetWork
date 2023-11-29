@@ -1,9 +1,9 @@
 import xml.etree.ElementTree as ET
 import xmlrpc.client
 
-url = 'https://dataguru.odoo.com'
-DB='dataguru'
-USER='khlazovska@uoc.edu'
+url = 'http://localhost:8069'
+DB='Network'
+USER='sbrudi@uoc.edu'
 PASS='password'
 
 common = xmlrpc.client.ServerProxy('{}/xmlrpc/2/common'.format(url))
@@ -14,15 +14,13 @@ models = xmlrpc.client.ServerProxy('{}/xmlrpc/2/object'.format(url))
 uid = common.authenticate(DB, USER, PASS, {})
 
 if uid:
-    archivo_xml = ET.parse('C:/Users/kater/OneDrive/Documentos/NET_PROD4/DataGuru/ProyectoGuruData/Controlador/Actividades.xml')
+    archivo_xml = ET.parse('C:/Users/sergi/Documents/GitHub/NetWork/NetWork/Controlador/Habitaciones.xml')
     xml = archivo_xml.getroot()
     for i in xml:
         do_write = models.execute(DB,uid,PASS,'x_actividades','create',[{
-            'x_studio_x_id': i[0].text,
-            'x_studio_x_tipo': i[1].text,
-            'x_studio_x_hora': i[2].text,
-            'x_studio_x_diaSemana': i[3].text,
-            'x_studio_x_plazas': i[4].text,
+            'x_studio_x_NumHabitacion': i[0].text,
+            'x_studio_x_Estado': i[1].text,
+            'x_studio_x_Tipo': i[2].text,
             }])
     print('Las actividades se han cargado correctamente')
 else:
