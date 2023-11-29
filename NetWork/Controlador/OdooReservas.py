@@ -2,7 +2,7 @@ import xml.etree.ElementTree as ET
 import xmlrpc.client
 
 url = 'http://localhost:8069'
-DB='Network'
+DB='network'
 USER='sbrudi@uoc.edu'
 PASS='password'
 
