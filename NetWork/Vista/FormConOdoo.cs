@@ -28,52 +28,7 @@ namespace NetWork.Vista
 
         private void btnActividadesOdoo_Click(object sender, EventArgs e)
         {
-            //exportamos un XML con las Actividades
 
-            ConexionDB db = new ConexionDB();
-            XElement xml = new XElement("Actividades",
-                               (from columna in db.Habitaciones
-                                select new
-                                {
-                                    columna.NumHabitacion,
-                                    columna.Estado,
-                                    columna.Tipo,
-                                }).ToList().Select(
-                                           x => new XElement("Habitaciones",
-                                                new XAttribute("NumHabitacion", x.NumHabitacion),
-                                                new XAttribute("Estado", x.Estado),
-                                                new XAttribute("Tipo", x.Tipo)
-                                           )));
-
-            FileStream xmlFile = File.OpenWrite(@"C:\Users\sergi\Documents\GitHub\NetWork\NetWork\Controlador\\Habitaciones.xml");
-            byte[] xmlBytes = Encoding.UTF8.GetBytes(xml.ToString());
-            xmlFile.Write(xmlBytes, 0, xmlBytes.Length);
-            xmlFile.Close();
-
-            // pasamos el xml al programa python
-            var script = @"C:\Users\sergi\Documents\GitHub\NetWork\NetWork\Controlador\OdooActividades.py";        // ESCIRBIR LA DIRECCIÓN DEL PY      
-
-            var psi = new ProcessStartInfo();
-            psi.FileName = @"C:\Users\sergi\AppData\Local\Programs\Python\Python312\python.exe";
-            psi.Arguments = $"\"{script}\"";
-            Process process = new Process();
-            process.StartInfo = psi;
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardInput = true;
-            process.StartInfo.RedirectStandardOutput = true;
-
-            process.Start();
-
-            process.StartInfo.RedirectStandardOutput = true;
-
-            while (!process.StandardOutput.EndOfStream)
-            {
-                string line = process.StandardOutput.ReadLine();
-                MessageBox.Show(line);
-            }
-            process.WaitForExit();
-
-            MessageBox.Show("Se han cargado los datos a Odoo");
         }
 
 
@@ -171,6 +126,55 @@ namespace NetWork.Vista
 
             // pasamos el xml al programa python
             var script = @"C:\Users\sergi\Documents\GitHub\NetWork\NetWork\Controlador\OdooClientes.py";        // ESCIRBIR LA DIRECCIÓN DEL PY
+
+            var psi = new ProcessStartInfo();
+            psi.FileName = @"C:\Users\sergi\AppData\Local\Programs\Python\Python312\python.exe";
+            psi.Arguments = $"\"{script}\"";
+            Process process = new Process();
+            process.StartInfo = psi;
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardInput = true;
+            process.StartInfo.RedirectStandardOutput = true;
+
+            process.Start();
+
+            process.StartInfo.RedirectStandardOutput = true;
+
+            while (!process.StandardOutput.EndOfStream)
+            {
+                string line = process.StandardOutput.ReadLine();
+                MessageBox.Show(line);
+            }
+            process.WaitForExit();
+
+            MessageBox.Show("Se han cargado los datos a Odoo");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            ConexionDB db = new ConexionDB();
+            XElement xml = new XElement("Habitaciones",
+                               (from columna in db.Habitaciones
+                                select new
+                                {
+                                    columna.NumHabitacion,
+                                    columna.Estado,
+                                    columna.Tipo.Descripcion,
+                                }).ToList().Select(
+                                           x => new XElement("Habitaciones",
+                                                new XAttribute("NumHabitacion", x.NumHabitacion),
+                                                new XAttribute("Estado", x.Estado),
+                                                new XAttribute("Tipo", x.Descripcion)
+                                           )));
+
+            FileStream xmlFile = File.OpenWrite(@"C:\Users\sergi\Documents\GitHub\NetWork\NetWork\Controlador\\Habitaciones.xml");
+            byte[] xmlBytes = Encoding.UTF8.GetBytes(xml.ToString());
+            xmlFile.Write(xmlBytes, 0, xmlBytes.Length);
+            xmlFile.Close();
+
+            // pasamos el xml al programa python
+            var script = @"C:\Users\sergi\Documents\GitHub\NetWork\NetWork\Controlador\OdooActividades.py";        // ESCIRBIR LA DIRECCIÓN DEL PY      
 
             var psi = new ProcessStartInfo();
             psi.FileName = @"C:\Users\sergi\AppData\Local\Programs\Python\Python312\python.exe";

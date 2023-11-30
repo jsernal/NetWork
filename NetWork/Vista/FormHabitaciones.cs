@@ -28,15 +28,15 @@ namespace NetWork.Vista
                 switch (tipoSeleccionado)
                 {
                     case "Habitación Estándar":
-                        return 101;
+                        return 1;
                     case "Suite de Lujo":
-                        return 102;
+                        return 2;
                     case "Habitación Familiar":
-                        return 103;
+                        return 3;
                     case "Habitación Individual":
-                        return 104;
+                        return 4;
                     case "Habitación Doble":
-                        return 105;
+                        return 5;
                     default:
                         throw new ArgumentException("Tipo de habitación no reconocido");
                 }
@@ -68,7 +68,6 @@ namespace NetWork.Vista
 
                     // Obtener el objeto TipoHabitacion según la descripción seleccionada en ComboBox1
                     TipoHabitacion tipoHabitacion = contexto.TipoHabitacion.SingleOrDefault(t => t.Descripcion == tipoSeleccionado);
-
                     if (tipoHabitacion != null)
                     {
                         // Crear una nueva habitación

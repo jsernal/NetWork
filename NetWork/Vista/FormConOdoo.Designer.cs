@@ -35,9 +35,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(312, 113);
+            this.button1.Location = new System.Drawing.Point(988, 322);
+            this.button1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 23);
+            this.button1.Size = new System.Drawing.Size(516, 65);
             this.button1.TabIndex = 0;
             this.button1.Text = "Cargar Clientes a Odoo";
             this.button1.UseVisualStyleBackColor = true;
@@ -45,18 +46,21 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(312, 185);
+            this.button2.Location = new System.Drawing.Point(988, 527);
+            this.button2.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(163, 23);
+            this.button2.Size = new System.Drawing.Size(516, 65);
             this.button2.TabIndex = 1;
             this.button2.Text = "Cargar habitaciones a Odoo";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(312, 259);
+            this.button3.Location = new System.Drawing.Point(988, 737);
+            this.button3.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(163, 23);
+            this.button3.Size = new System.Drawing.Size(516, 65);
             this.button3.TabIndex = 2;
             this.button3.Text = "Cargar Reservas a Odoo";
             this.button3.UseVisualStyleBackColor = true;
@@ -64,12 +68,13 @@
             // 
             // FormConOdoo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(2437, 1176);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.Name = "FormConOdoo";
             this.Text = "FormConOdoo";
             this.Load += new System.EventHandler(this.FormConOdoo_Load);
