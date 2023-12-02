@@ -34,7 +34,7 @@ namespace NetWork.Vista
 
 
 
-    private void FormConOdoo_Load(object sender, EventArgs e)
+        private void FormConOdoo_Load(object sender, EventArgs e)
         {
 
         }
@@ -173,30 +173,41 @@ namespace NetWork.Vista
             xmlFile.Write(xmlBytes, 0, xmlBytes.Length);
             xmlFile.Close();
 
-            // pasamos el xml al programa python
-            var script = @"C:\Users\sergi\Documents\GitHub\NetWork\NetWork\Controlador\OdooActividades.py";        // ESCIRBIR LA DIRECCIÓN DEL PY      
 
+            var script = @"C:\Users\sergi\Documents\GitHub\NetWork\NetWork\Controlador\OdooHabitaciones.py";
             var psi = new ProcessStartInfo();
             psi.FileName = @"C:\Users\sergi\AppData\Local\Programs\Python\Python312\python.exe";
             psi.Arguments = $"\"{script}\"";
+            psi.UseShellExecute = false;
+            psi.RedirectStandardOutput = true;
+            psi.RedirectStandardError = true;
+
             Process process = new Process();
             process.StartInfo = psi;
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardInput = true;
-            process.StartInfo.RedirectStandardOutput = true;
+
+            process.OutputDataReceived += (s, args) =>
+            {
+                if (!string.IsNullOrEmpty(args.Data))
+                {
+                    MessageBox.Show(args.Data); // Muestra la salida estándar del proceso
+                }
+            };
+
+            process.ErrorDataReceived += (s, args) =>
+            {
+                if (!string.IsNullOrEmpty(args.Data))
+                {
+                    MessageBox.Show(args.Data); // Muestra los mensajes de error del proceso
+                }
+            };
 
             process.Start();
+            process.BeginOutputReadLine();
+            process.BeginErrorReadLine();
 
-            process.StartInfo.RedirectStandardOutput = true;
-
-            while (!process.StandardOutput.EndOfStream)
-            {
-                string line = process.StandardOutput.ReadLine();
-                MessageBox.Show(line);
-            }
             process.WaitForExit();
 
-            MessageBox.Show("Se han cargado los datos a Odoo");
+            MessageBox.Show("¿Funciona?");
         }
     }
-}
+    }

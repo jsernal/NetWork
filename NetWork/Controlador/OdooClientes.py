@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 import xmlrpc.client
 
-url = 'http://localhost:8069'
+url = 'https://netwok.odoo.com/'
 DB = 'network'
 USER = 'sbrudi@uoc.edu'
 PASS = 'password'
