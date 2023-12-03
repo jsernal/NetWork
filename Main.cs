@@ -13,13 +13,15 @@ namespace NetWork
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            InicializarDatosAlInicio();
+           // InicializarDatosAlInicio();
 
             Application.Run(new NetWork.Vista.FormIniciarSesionUsuario());
 
         }
+    }
+}
 
-        static void InicializarDatosAlInicio()
+     /*   static void InicializarDatosAlInicio()
         {
             using (var dbContext = new ConexionDB())
             {
@@ -133,4 +135,4 @@ namespace NetWork
 
 
     }
-}
+} */
