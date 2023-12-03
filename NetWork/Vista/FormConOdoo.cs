@@ -113,7 +113,7 @@ namespace NetWork.Vista
                                            x => new XElement("Cliente",
                                            new XAttribute("idCliente", x.IdCliente),
                                                 new XAttribute("Nombre", x.Nombre),
-                                                new XAttribute("Teléfono", x.Telefono),
+                                                new XAttribute("Telefono", x.Telefono),
                                                 new XAttribute("DNI", x.Dni),
                                                 new XAttribute("Email", x.Email),
                                                 new XAttribute("Tipo", x.Tipo)

@@ -2,8 +2,8 @@ import xml.etree.ElementTree as ET
 import xmlrpc.client
 
 # URL y credenciales de la base de datos de Odoo
-url = 'https://netwok.odoo.com/'
-DB = 'netwok'
+url = 'https://network4.odoo.com/'
+DB = 'network4'
 USER = 'sbrudi@uoc.edu'
 PASS = 'password'
 
@@ -14,18 +14,17 @@ uid = common.authenticate(DB, USER, PASS, {})
 
 if uid:
     # Ruta del archivo XML
-    xml_file_path = 'C:/Users/sergi/Documents/GitHub/NetWork/NetWork/Controlador/Habitaciones.xml'
+    archivo_xml = ET.parse('C:/Users/sergi/Documents/GitHub/NetWork/NetWork/Controlador/Habitaciones.xml')
 
-    # Parsear el archivo XML
-    tree = ET.parse(xml_file_path)
-    root = tree.getroot()
+    xml = archivo_xml.getroot()
 
     # Iterar sobre los elementos del XML y enviar a Odoo
-    for habitacion in root.findall('Habitacion'):
+    for habitacion in xml.findall('Habitaciones'):
         habitacion_data = {
-            'x_studio_x_numhabitacion': habitacion.find('Numero').text,
-            'x_studio_x_estado': habitacion.find('Estado').text,
-            'x_studio_x_tipo': habitacion.find('Tipo').text,
+            'x_studio_x_numhabitacion': habitacion.attrib['NumHabitacion'],
+            'x_studio_x_estado': habitacion.attrib['Estado'],
+            'x_studio_x_tipo': habitacion.attrib['Tipo'],
+            'x_name': habitacion.attrib['NumHabitacion'],
         }
 
         # Crear la habitación en el servidor Odoo
@@ -36,5 +35,3 @@ if uid:
             print(f"Error al crear la habitación: {e}")
 else:
     print('Error en la conexión')
-    
-input("Presiona Enter para salir...")
